@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;500;700&family=Rubik:ital,wght@0,300;0,400;0,500;0,900;1,300;1,500&display=swap');
+
+:root {
+  --darker: #1c102c;
+  --dark-soft: #472f6a43;
+  --dark: #3a215c;
+  --normal: #60339f;
+  --normaler: #8044d5;
+  --light: #a186c2;
+  --lighter: #cec7db;
+}
+
+html {
+  font-family: Rubik;
+  background-color: var(--darker);
+  color: var(--lighter);
+}
+

@@ -1,0 +1,159 @@
+.header_text {
+  color: var(--normaler);
+  font-size: 2.7em;
+}
+
+.dashboard_settings {
+  position: absolute;
+  top: 1vh;
+  right: 1vh;
+}
+
+.dashboard_settings:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.dashboard_settings svg {
+  height: 3vh;
+}
+
+.dashboard_settings svg>path {
+  fill: var(--light);
+}
+
+.main {
+  margin: 5vh auto;
+  width: 85%;
+  max-height: 90vh;
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.header {
+  width: 100%;
+}
+
+.header_text {
+  width: fit-content;
+  margin: auto;
+  padding: 10px 0px
+}
+
+.header_widget {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8em;
+}
+
+.header_widget > a:first-child {
+  border: 0;
+}
+
+.header_widget > a, .header_widget > div {
+  padding: 0 0.4vw;
+  margin: 0;
+  border-left: solid 1px var(--normaler);
+  height: 1em;
+}
+
+.header_widget > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header_widget > div > img {
+  height: 1.4em;
+  margin-right: 5px;
+}
+
+.header_widget > div > a {
+  height: 1em;
+}
+
+.header_widget a:empty {
+  background: linear-gradient(0.25turn, var(--dark), var(--dark), var(--normal), var(--dark), var(--dark));
+  border: 0;
+  padding: 0 2vw;
+  margin: 0 0.2vw;
+  background-size: 300%;
+  animation: loading_animation 5s ease-out infinite;
+  border-radius: 5%;
+}
+
+@keyframes loading_animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.content {
+  margin: 10vh auto 0 auto;
+  max-height: 70vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 85%;
+  height: 100%;
+  align-items: stretch;
+  column-gap: 1.3vw;
+  row-gap: 1vw;
+  align-content: center;
+}
+
+.shortcut {
+  width: 4.5vw;
+  padding: 1vh;
+  background-color: var(--dark-soft);
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.shortcut:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.shortcut_test {
+  background-color: aqua;
+}
+
+.shortcut_image_container {
+  width: 4vw;
+  height: 4vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.shortcut_image {
+  width: 100%;
+}
+
+.shortcut_title {
+  margin-top: 16px;
+  font-size: 0.7em;
+  text-align: center;
+  line-break: anywhere;
+}
+
+
+
+
