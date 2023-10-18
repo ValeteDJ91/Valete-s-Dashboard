@@ -12,7 +12,8 @@ app.use("/config", config);
 app.use("/api", api);
 
 app.get("/", function (req, res) {
-  res.render("dashboard/dashboard.ejs")
+  var json = require('./data/test.json')
+  res.render("dashboard/dashboard.ejs", {data: json})
 });
 
 app.listen(port, function () {

@@ -24,18 +24,14 @@
       </div>
 
       <div class="content">
-        <% for(let i=0; i<20; i++) { %>
-        <div class="shortcut <%if(i%2 == 0){%>short_test<%}%>">
+        <% data.shortcut.forEach(function(shortcut) { %>
+        <div class="shortcut">
           <div class="shortcut_image_container">
-            <% if (i%2 == 0) { %>
-              <img class="shortcut_image" src="image/plex.png">
-            <% } else { %>
-              <img class="shortcut_image" src="image/github-mark.png">
-            <% }; %>
-            </div>
-          <a class="shortcut_title">TEST <%= i %></a>
+            <img class="shortcut_image" src="image/shortcut/<%= shortcut.image %>">
+          </div>
+          <a class="shortcut_title"><%= shortcut.title %></a>
         </div>
-        <% }; %>
+        <% }); %>
       </div>
     </div>
     <div class="dashboard_settings">

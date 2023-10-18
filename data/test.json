@@ -1,0 +1,24 @@
+{
+  "shortcut": [
+    {
+      "title": "Test PLEX",
+      "image": "plex.png"
+    },
+    {
+      "title": "Test Second",
+      "image": "plex_test.svg"
+    },
+    {
+      "title": "github",
+      "image": "github-mark.png"
+    },
+    {
+      "title": "direct link to github with svg",
+      "image": "github-mark-white.svg"
+    },
+    {
+      "title": "Test",
+      "image": "plex.png"
+    }
+  ]
+}
