@@ -12,10 +12,11 @@ app.use("/config", config);
 app.use("/api", api);
 
 app.get("/", function (req, res) {
-  var json = require('./data/test.json')
-  res.render("dashboard/dashboard.ejs", {data: json})
+  let jsonshortcut = require('./data/shortcut.json')
+  let jsonconfig = require('./data/config.json')
+  res.render("dashboard/dashboard.ejs", {shortcuts: jsonshortcut,config: jsonconfig})
 });
 
 app.listen(port, function () {
-  console.log(`app listening on port ${port}!`);
+  console.log(`Dashboard listening on port ${port}!`);
 });
