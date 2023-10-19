@@ -34,7 +34,7 @@
         <% shortcuts.forEach(function(shortcut) { %>
         <div class="shortcut">
           <div class="shortcut_image_container">
-            <img class="shortcut_image" src="image/shortcut/<%= shortcut.image %>">
+            <img class="shortcut_image" src="image/shortcut/<%= shortcut.image %>" alt="<%= shortcut.title %>" onerror="this.onerror = null;this.outerHTML = '<a><%= shortcut.title.split(` `).map((word) => word[0]).join(``).toUpperCase() %></a>'">
           </div>
           <a class="shortcut_title"><%= shortcut.title %></a>
         </div>
