@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html <% if (background) { %> style="background-image: url('<%= background %>');" <% } %> >
   <head>
     <meta charset="UTF-8">
     <title><%= config.title %></title>
 
-    <link rel="stylesheet" href="stylesheets/global.css">
-    <link rel="stylesheet" href="stylesheets/dashboard.css">
+    <link rel="stylesheet" href="http://127.0.0.1:3333/stylesheets/global.css">
+    <link rel="stylesheet" href="http://127.0.0.1:3333/stylesheets/dashboard.css">
 
     <% if (config.weather_widget) { %>
     <script src="js/weather.js" defer></script>

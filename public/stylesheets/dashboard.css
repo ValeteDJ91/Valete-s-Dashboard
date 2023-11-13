@@ -23,12 +23,14 @@
 }
 
 .main {
-  margin: 5vh auto;
+  padding: 5vh 0;
   width: 85%;
   max-height: 90vh;
   position: relative;
   height: 90vh;
   overflow: hidden;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .header {
