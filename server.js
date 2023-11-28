@@ -5,10 +5,12 @@ const app = express();
 const port = 3333;
 const config = require("./routes/config.js");
 const api = require("./routes/api.js");
-const { middleware } = require("./middlewares/config.js");
+const logger = require("./middlewares/logger.js");
 require('dotenv').config()
 
 app.set("view engine", "ejs");
+
+app.use(logger);
 
 app.use("/", express.static("public"));
 
