@@ -3,13 +3,14 @@ const router = express.Router();
 const middleware = require("../middlewares/config.js");
 
 router.get("/login", function (req, res) {
-  res.render("config/login.ejs")
+  let jsonconfig = require('../data/config.json')
+  res.render("config/login.ejs", {config: jsonconfig})
 });
 
 router.use(middleware);
 
 router.get("/", function (req, res) {
-  res.render("config/config.ejs")
+  res.render("config/config.ejs", {config: jsonconfig})
 });
 
 module.exports = router;

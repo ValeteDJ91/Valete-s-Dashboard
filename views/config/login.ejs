@@ -11,24 +11,18 @@
     <div class="main">
       <div class="login_container">
         <h1 class="login_header">Login</h1>
-        <input type="text" class="login_input">
-        <input type="password" class="login_input">
+        <div class="login_input_container">
+          <% if(config.login_username) { %>
+          <label class="login_label">Username</label>
+          <input type="text" class="login_input">
+          <% } %>
+          <label class="login_label">Password</label>
+          <input type="password" class="login_input">
+        </div>
         <button class="login_button">Continue</button>
       </div>
     </div>
   </body>
 </html>
 
-<style>
-
-  :root {
-    --darker: #1c102c;
-    --dark-soft: #472f6a43;
-    --dark: #3a215c;
-    --normal: #60339f;
-    --normaler: #8044d5;
-    --light: #a186c2;
-    --lighter: #cec7db;
-  }
-
-</style>
+<%- include('../css.ejs'); %>
