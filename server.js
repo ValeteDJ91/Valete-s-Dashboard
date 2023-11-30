@@ -1,4 +1,5 @@
 const express = require("express");
+const session = require('express-session');
 const axios = require('axios');
 const fs = require('fs');
 const app = express();
@@ -13,6 +14,12 @@ app.set("view engine", "ejs");
 app.use(logger);
 
 app.use("/", express.static("public"));
+
+app.use(session({
+  secret: 'Simpl3 sCrEtE',
+  resave: false,
+  saveUninitialized: true
+}))
 
 app.use("/config", config);
 app.use("/api", api);
@@ -30,11 +37,11 @@ app.get("/", async function (req, res) {
       }
     });
     var bg_image = bg_image_tmp?.data?.urls?.raw;
-  } else if (jsonconfig.random_background_image_file) {    
+  } else if (jsonconfig.random_background_image_file) {
     let files = fs.readdirSync("./public/image/background")
-    var bg_image = "/image/background/"+files[Math.round(Math.random()*(files.length-1))]
+    var bg_image = "/image/background/" + files[Math.round(Math.random() * (files.length - 1))]
   }
-  res.render("dashboard/dashboard.ejs", {shortcuts: jsonshortcut,config: jsonconfig,background: typeof bg_image === 'undefined' ? "" : bg_image})
+  res.render("dashboard/dashboard.ejs", { shortcuts: jsonshortcut, config: jsonconfig, background: typeof bg_image === 'undefined' ? "" : bg_image })
 });
 
 app.listen(port, function () {

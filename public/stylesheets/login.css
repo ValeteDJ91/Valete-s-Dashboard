@@ -74,3 +74,17 @@
   background-color: var(--light);
 }
 
+.login_fail_container {
+  display: block;
+  padding: 0 5%;
+  border-radius: 10px;
+  background-color: #ae262a6b;
+}
+
+.login_fail_head {
+  margin: 2vh auto 0.6vh;
+}
+
+.login_fail_text {
+  margin: 0 auto 1vh;
+}

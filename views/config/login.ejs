@@ -1,28 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="http://127.0.0.1:3333/stylesheets/global.css">
-    <link rel="stylesheet" href="http://127.0.0.1:3333/stylesheets/login.css">
-    <title>EJS Is Fun</title>
-  </head>
 
-  <body>
-    <div class="main">
-      <div class="login_container">
-        <h1 class="login_header">Login</h1>
-        <div class="login_input_container">
-          <% if(config.login_username) { %>
-          <label class="login_label">Username</label>
-          <input type="text" class="login_input">
-          <% } %>
-          <label class="login_label">Password</label>
-          <input type="password" class="login_input">
-        </div>
-        <button class="login_button">Continue</button>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="http://127.0.0.1:3333/stylesheets/global.css">
+  <link rel="stylesheet" href="http://127.0.0.1:3333/stylesheets/login.css">
+  <title>EJS Is Fun</title>
+</head>
+
+<body>
+  <div class="main">
+    <form class="login_container" action="/api/login" method="POST">
+      <h1 class="login_header">Login</h1>
+      <div id="login_fail" class="login_fail_container" style="display: none;">
+        <h2 class="login_fail_head">Failed to login</h2>
+        <p id="login_fail_text" class="login_fail_text"></p>
       </div>
-    </div>
-  </body>
+      <div class="login_input_container">
+        <% if(config.login_username) { %>
+          <label class="login_label">Username</label>
+          <input name="username" type="text" class="login_input">
+          <% } %>
+            <label class="login_label">Password</label>
+            <input name="password" type="password" class="login_input">
+      </div>
+      <button class="login_button">Continue</button>
+    </form>
+  </div>
+</body>
+
 </html>
+
+<script>
+
+  window.onload = () => {
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+      get: (searchParams, prop) => searchParams.get(prop),
+    });
+    if (params.f && params.f == "pass") {
+      document.getElementById("login_fail").style.display = "block"
+      document.getElementById("login_fail_text").textContent = "Username or password is incorrect!"
+    } else if (params.f && params.f == "fail") {
+      document.getElementById("login_fail").style.display = "block"
+      document.getElementById("login_fail_text").textContent = "An error occured!"
+    }
+  }
+
+</script>
 
 <%- include('../css.ejs'); %>
